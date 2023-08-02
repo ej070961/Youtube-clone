@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
 import {loginUser} from '../../../_actions/user_action';
 import { useNavigate } from 'react-router-dom';
-
+import Auth from '../../../hoc/auth';
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -30,6 +30,7 @@ function LoginPage(props) {
     dispatch(loginUser(body)) //loginUser라는 액션에 body를 넣어줌 
       .then(response => {
         if(response.payload.loginSuccess){
+          localStorage.setItem('userId', response.payload.userId) //localStorage에 userId를 저장
           navigate('/')
         }else{
           alert('Error')
@@ -62,4 +63,4 @@ function LoginPage(props) {
   )
 }
 
-export default LoginPage
+export default Auth(LoginPage, null)

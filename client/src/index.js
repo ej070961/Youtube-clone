@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 import {Provider} from 'react-redux'
@@ -10,7 +10,7 @@ import { DatePicker } from 'antd';
 import { applyMiddleware, createStore} from 'redux';
 import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
-import Reducer from './_reducers';
+import Reducer from './_reducers/index.js';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore);//미들웨어와 함께 스토어를 만들 수 있게 해줌 
 //어플리케이션 시작점 
