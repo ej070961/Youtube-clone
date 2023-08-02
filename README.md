@@ -1,6 +1,5 @@
 # Yutube Clone Project
 
-  <br>
   Node.js + React.js 동영상 공유 웹사이트 
   <br>
 </p>
